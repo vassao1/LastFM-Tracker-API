@@ -15,12 +15,7 @@ def read_token():
 
 @app.get('/spotify-now-playing')
 def now_playing():
-    response = requests.get(url=currentlyplaying, 
-                            headers={'Authorization': 'Bearer ' + refreshao})
-    if response.status_code == 204:
-        return {'mensagem': 'Nada tocando no momento :p'}
-    response = response.json()
-    return {'title': {response["item"]["name"]}, 'artist': {response["item"]["artists"][0]["name"]}}
+    return getNowPlaying()
 
 @app.get('/spotify-refresh-token')
 def refresh_token():
