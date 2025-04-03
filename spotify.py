@@ -39,3 +39,11 @@ def getRefresh():
 
 access_token = getAccessToken()['access_token']
 refreshao = getRefresh()['access_token']
+
+def getNowPlaying():
+    response = requests.get(url=currentlyplaying, 
+                            headers={'Authorization': 'Bearer ' + refreshao})
+    if response.status_code == 204:
+        return {'mensagem': 'Nada tocando no momento :p'}
+    response = response.json()
+    return {'title': {response["item"]["name"]}, 'artist': {response["item"]["artists"][0]["name"]}}
