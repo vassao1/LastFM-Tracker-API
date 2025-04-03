@@ -2,7 +2,7 @@
 
   
 
-Primeiro de tudo, clona o repo, seta aquele venv do python e dá um pip install -r requirements.txt.
+Primeiro de tudo, clona o repo, seta aquele venv do python e dá um ```pip install -r requirements.txt```.
 
 Ok, coisa linda, agora cria um .env na pasta raiz do repo
 
@@ -24,7 +24,7 @@ Nele você vai botar:
 
 - lastfmuser = '(insira user do lastfm)'
 
-Fez isso, só entrar na pasta principal e rodar um ```uvicorn main:app```
+Fez isso, só entrar na pasta raiz pelo terminal e rodar um ```uvicorn main:app```
 
 Loucura, né? Pega o ip que ele vai te retornar e é isso.
 
